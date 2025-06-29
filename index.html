@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Worker 控制台</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="login-box">
+    <h2>登录控制台</h2>
+    <input type="password" id="password" placeholder="请输入密码" />
+    <button onclick="checkLogin()">登录</button>
+    <p id="login-error"></p>
+  </div>
+
+  <div id="dashboard" style="display: none;">
+    <h1>🌐 Worker 控制面板</h1>
+
+    <section>
+      <h2>请求测试工具</h2>
+      <input type="text" id="fileInput" placeholder="文件名 (如 vmess.txt)" />
+      <input type="text" id="keyInput" placeholder="访问密码" />
+      <input type="text" id="workerInput" placeholder="Worker 地址" />
+      <button onclick="testWorker()">测试请求</button>
+      <pre id="resultBox"></pre>
+    </section>
+
+    <section>
+      <h2>IP 黑名单管理</h2>
+      <input type="text" id="ipInput" placeholder="添加 IP 到黑名单" />
+      <button onclick="addIP()">添加</button>
+      <ul id="ipList"></ul>
+    </section>
+
+    <section>
+      <h2>模拟访问日志</h2>
+      <ul id="logList"></ul>
+    </section>
+
+    <button onclick="logout()">登出</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
